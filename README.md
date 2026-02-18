@@ -30,7 +30,7 @@
 
 1. Create a new branch (e.g. `my-reports`) from the `main` branch of your fork.
 1. Define the qualifications by updating [`qualifications.csv`](qualifications.csv) (see the [Qualifications](#qualifications) section below for details)
-   * Once you are finished, verify that the check [Validate qualifications.csv](../../actions/workflows/check-qualifications.yml) was successful!
+   * Once you are finished, push the new branch to your fork and verify that the check [Validate qualifications.csv](../../actions/workflows/check-qualifications.yml) was successful!
 1. [OPTIONAL] Adjust the OSP environment and tools by updating [`tools.csv`](tools.csv)<br>(see the [Tools](#tools) section below for details)
     * In case of modifications: verify that the check [Validate tools.csv](../../actions/workflows/check-tools.yml) was successful!
 1. Go to the GitHub Action: [Qualification Reports](../../actions/workflows/create-qualification_reports.yml)
