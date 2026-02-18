@@ -91,24 +91,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v6
     
-#    - name: Rebase from the base branch
-#      run: |
-#        git config --global core.longpaths true
-#        git config --global user.name 'github-actions'
-#        git config --global user.email 'github-actions@github.com'
-#        git checkout -b ${{ matrix['Repository name'] }}-${{ github.run_number }}
-#        git push -u origin ${{ matrix['Repository name'] }}-${{ github.run_number }}
-#        git fetch origin ${{ github.ref_name }}
-#        git rebase -Xours origin/${{ github.ref_name }}
-#        if git rev-parse HEAD^ >/dev/null 2>&1; then
-#          git reset HEAD^
-#        else
-#          echo "No parent commit for HEAD. Skipping reset."
-#        fi
-#        [ -d "${{ matrix['Folder name'] }}" ] && rm -rf ${{ matrix['Folder name'] }}/*
-#        git add ${{ matrix['Folder name'] }} || echo "No file in ${{ matrix['Folder name'] }}"
-#        git commit -m "Update ${{ matrix['Folder name'] }}" || echo "No changes to commit"
-#      shell: bash
+    - name: Configure git
+      run: |
+        git config --global core.longpaths true
+      shell: bash
 
     # Compute hash of tools.csv and export to environment for subsequent steps
     - name: Compute tools.csv hash

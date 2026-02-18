@@ -2,35 +2,42 @@
 
 ## Preparation
 * Fork this repository into your GitHub user account (if you have not done so yet).
+* Enable Workflows on your forked repository
+
+  <img width="600" alt="image" src="https://github.com/user-attachments/assets/e120663e-0916-4c79-b0eb-b16034601b9c" />
+
 * [OPTIONAL] Synchronize the `main` branch of your fork with the parent OSP repository if required <br>(see [Syncing a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) in the GitHub documentation for details).
+
+## Notes
+* Do not use Excel to edit and save CSV files. Use a text editor only.
 
 ## How to create model evaluation reports
 
-- Create a new branch (e.g. `my-reports`) from the `main` branch of your fork.
-  - Define the models by updating [`models.csv`](models.csv) (see the [Models](#models) section below for details)
-    - Once you are finished, verify that the check [Validate models.csv](../../actions/workflows/check-models.yml) was successful!
-  - [OPTIONAL] Adjust the OSP environment and tools by updating [`tools.csv`](tools.csv)<br>(see the [Tools](#tools) section below for details)
-    - In case of modifications: verify that the check [Validate tools.csv](../../actions/workflows/check-tools.yml) was successful!
-  - Go to the GitHub Action: [Create evaluation reports and projects](../../actions/workflows/create-evaluation_reports.yml)<br><br>
-    - Click the __Run workflow__ button 
-      - Select the branch defined in the first step (for instance, `my-reports`)
-      - [OPTIONAL] Adjust the commit message that will appear later in the created pull request<br>(see the [What to do when reports are created](#next-step) section below).
-      - Click the green __Run workflow__ button
+1. Create a new branch (e.g. `my-reports`) from the `main` branch of your fork.
+1. Define the models by updating [`models.csv`](models.csv) (see the [Models](#models) section below for details)
+   * Once you are finished, push the new branch to your fork and verify that the check [Validate models.csv](../../actions/workflows/check-models.yml) was successful!
+1. [OPTIONAL] Adjust the OSP environment and tools by updating [`tools.csv`](tools.csv)<br>(see the [Tools](#tools) section below for details)
+   * In case of modifications: verify that the check [Validate tools.csv](../../actions/workflows/check-tools.yml) was successful!
+1. Go to the GitHub Action: [Create evaluation reports and projects](../../actions/workflows/create-evaluation_reports.yml)<br><br>
+   * Click the __Run workflow__ button 
+   * Select the branch defined in the first step (for instance, `my-reports`)
+   * [OPTIONAL] Adjust the commit message that will appear later in the created pull request<br>(see the [What to do when reports are created](#next-step) section below).
+   * Click the green __Run workflow__ button
      
-        <img width="800" src="https://github.com/user-attachments/assets/d787ddc6-db2a-47c0-ab98-82bcb0051bb4" />
+        <img width="800" alt="Run workflow dialog showing branch selection and commit message options" src="https://github.com/user-attachments/assets/d787ddc6-db2a-47c0-ab98-82bcb0051bb4" />
 
 ## How to create qualification reports
 
-- Create a new branch (e.g. `my-reports`) from the `main` branch of your fork.
-  - Define the qualifications by updating [`qualifications.csv`](qualifications.csv) (see the [Qualifications](#qualifications) section below for details)
-    - Once you are finished, verify that the check [Validate qualifications.csv](../../actions/workflows/check-qualifications.yml) was successful!
-  - [OPTIONAL] Adjust the OSP environment and tools by updating [`tools.csv`](tools.csv)<br>(see the [Tools](#tools) section below for details)
-    - In case of modifications: verify that the check [Validate tools.csv](../../actions/workflows/check-tools.yml) was successful!
-  - Go to the GitHub Action: [Qualification Reports](../../actions/workflows/create-qualification_reports.yml)<br><br>
-    - Click the __Run workflow__ button 
-      - Select the branch defined in the first step (for instance, `my-reports`)
-      - [OPTIONAL] Adjust the commit message that will appear later in the created pull request<br>(see the [What to do when reports are created](#next-step) section below).
-      - Click the green __Run workflow__ button 
+1. Create a new branch (e.g. `my-reports`) from the `main` branch of your fork.
+1. Define the qualifications by updating [`qualifications.csv`](qualifications.csv) (see the [Qualifications](#qualifications) section below for details)
+   * Once you are finished, push the new branch to your fork and verify that the check [Validate qualifications.csv](../../actions/workflows/check-qualifications.yml) was successful!
+1. [OPTIONAL] Adjust the OSP environment and tools by updating [`tools.csv`](tools.csv)<br>(see the [Tools](#tools) section below for details)
+    * In case of modifications: verify that the check [Validate tools.csv](../../actions/workflows/check-tools.yml) was successful!
+1. Go to the GitHub Action: [Qualification Reports](../../actions/workflows/create-qualification_reports.yml)
+    * Click the __Run workflow__ button 
+    * Select the branch defined in the first step (for instance, `my-reports`)
+    * [OPTIONAL] Adjust the commit message that will appear later in the created pull request<br>(see the [What to do when reports are created](#next-step) section below).
+    * Click the green __Run workflow__ button 
 
 ## What to do when reports are created<a id="next-step"></a>
 
